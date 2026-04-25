@@ -6,13 +6,21 @@
 
 We build tools that let AI operate at full capacity under human direction, not in place of it. Every AI action is visible. Every output is reviewable. At every decision point, you can step in. AI executes; you decide.
 
-## Wallfacer
+## Products
 
-Our first product is [Wallfacer](https://github.com/changkun/wallfacer), an autonomous engineering platform that works across multiple levels of abstraction.
+### Wallfacer
+
+[Wallfacer](https://latere.ai/wallfacer) is an autonomous engineering platform that works across multiple levels of abstraction.
 
 Start with a conversation when you're exploring an idea. Move to specs when the shape becomes clear. Track tasks when it's time to execute. Drop into code when you need precision. Agents operate at every level, and you decide how much freedom they get.
 
 Open source. Runs locally. No IDE lock-in. No cloud dependency. Bring your own LLM provider.
+
+### Cella
+
+[Cella](https://latere.ai/cella) is a sandbox runtime for agents, developers, and MCP background jobs. Fast enough to throw away. Durable enough to keep.
+
+Mint a named sandbox in one API call, ephemeral or persistent. Warm starts in roughly 300ms. Real secrets never enter the sandbox; a per-client credential broker hands out scoped, narrow-audience tokens on demand. Currently in private beta.
 
 ## What we believe
 
@@ -24,4 +32,5 @@ Open source. Runs locally. No IDE lock-in. No cloud dependency. Bring your own L
 
 - [latere.ai](https://latere.ai)
 - [Wallfacer](https://latere.ai/wallfacer)
+- [Cella](https://latere.ai/cella)
 - [Blog](https://latere.ai/blog)
