@@ -16,9 +16,7 @@ Five systems keep autonomous agents legible, bounded, and reviewable, with one i
 
 ### Agents
 
-**[Topos](https://topos.latere.ai/)** runs managed agent workspaces. Run Codex, Claude Code, or custom agents in governed cloud sessions with safe model access, tools, and resumable state.
-
-**[Agon](https://agon.latere.ai/)** is an adversarial verification gate. An independent critic cross-examines AI-generated work, and the producer must defend or fix every attack. Vendor-neutral, auditable, surfaces only the disputes that survive.
+**[Topos](https://topos.latere.ai/)** runs managed agent workspaces. Run Codex, Claude Code, or custom agents in governed cloud sessions with safe model access, tools, and resumable state. Its [Adversarial Review](https://topos.latere.ai/adversarial-review) capability puts an independent critic on an agent's output before you see it, vendor-neutral and auditable, so only the disputes that survive reach a human.
 
 ### Infrastructure
 
@@ -38,6 +36,6 @@ Five systems keep autonomous agents legible, bounded, and reviewable, with one i
 ## Links
 
 - [latere.ai](https://latere.ai)
-- [Wallfacer](https://wf.latere.ai/) · [Topos](https://topos.latere.ai/) · [Agon](https://agon.latere.ai/) · [Cella](https://cella.latere.ai/) · [Lux](https://lux.latere.ai/) · [Identity](https://auth.latere.ai/)
+- [Wallfacer](https://wf.latere.ai/) · [Topos](https://topos.latere.ai/) · [Cella](https://cella.latere.ai/) · [Lux](https://lux.latere.ai/) · [Identity](https://auth.latere.ai/)
 - [Blog](https://latere.ai/blog)
 - [Contact](mailto:contact@latere.ai)
