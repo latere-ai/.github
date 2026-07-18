@@ -8,7 +8,7 @@ Autonomous agents can now act across tools, models, data, and environments. The 
 
 ## Products
 
-Five systems keep autonomous agents legible, bounded, and reviewable, with one identity tying them together.
+Seven systems keep autonomous agents legible, bounded, and reviewable, with one identity tying them together.
 
 ### Workspace
 
@@ -17,6 +17,12 @@ Five systems keep autonomous agents legible, bounded, and reviewable, with one i
 ### Agents
 
 **[Topos](https://topos.latere.ai/)** runs managed agent workspaces. Run Codex, Claude Code, or custom agents in governed cloud sessions with safe model access, tools, and resumable state. Its [Adversarial Review](https://topos.latere.ai/adversarial-review) capability puts an independent critic on an agent's output before you see it, vendor-neutral and auditable, so only the disputes that survive reach a human.
+
+### Data
+
+**[Lectio](https://lectio.latere.ai/)** turns any document into data. Drop in almost any file, PDF, Word, spreadsheets, slides, images, or web pages, and it reads every page, resolves the layout, and returns readable text or structured data, with every detail sourced back to where it came from on the page.
+
+**[Drive](https://drive.latere.ai/)** is the user data plane. It persists user-owned state across products: personal files, org shared drives, Cella-mountable workspaces, agent-produced code repos, and file-shaped agent memory. Both a Drive-style web app and the storage API that Cella, Topos, and Wallfacer mount.
 
 ### Infrastructure
 
@@ -36,6 +42,6 @@ Five systems keep autonomous agents legible, bounded, and reviewable, with one i
 ## Links
 
 - [latere.ai](https://latere.ai)
-- [Wallfacer](https://wf.latere.ai/) · [Topos](https://topos.latere.ai/) · [Cella](https://cella.latere.ai/) · [Lux](https://lux.latere.ai/) · [Identity](https://auth.latere.ai/)
+- [Wallfacer](https://wf.latere.ai/) · [Topos](https://topos.latere.ai/) · [Lectio](https://lectio.latere.ai/) · [Drive](https://drive.latere.ai/) · [Cella](https://cella.latere.ai/) · [Lux](https://lux.latere.ai/) · [Identity](https://auth.latere.ai/)
 - [Blog](https://latere.ai/blog)
 - [Contact](mailto:contact@latere.ai)
