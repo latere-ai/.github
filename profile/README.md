@@ -12,11 +12,11 @@ Seven systems keep autonomous agents legible, bounded, and reviewable, with one 
 
 ### Workspace
 
-**[Wallfacer](https://wf.latere.ai/)** is an autonomous engineering platform. It works across multiple levels of abstraction: chat for exploration, specs for design, tasks for parallel execution, and code for precise edits. Full autonomy when it earns trust, full control on demand. Open source, runs locally, bring any LLM provider.
+**[Wallfacer](https://wf.latere.ai/)** is an autonomous engineering platform. It works across multiple levels of abstraction: chat for exploration, specs for design, tasks for parallel execution, and code for precise edits. Full autonomy when it earns trust, full control on demand. [Open source](https://github.com/changkun/wallfacer), runs locally, bring any LLM provider.
 
 ### Agents
 
-**[Topos](https://topos.latere.ai/)** runs managed agent workspaces. Run Codex, Claude Code, or custom agents in governed cloud sessions with safe model access, tools, and resumable state. Its [Adversarial Review](https://topos.latere.ai/adversarial-review) capability puts an independent critic on an agent's output before you see it, vendor-neutral and auditable, so only the disputes that survive reach a human.
+**[Topos](https://topos.latere.ai/)** runs managed agent workspaces. Run Codex, Claude Code, or custom agents in governed cloud sessions with safe model access, tools, and resumable state. Its [Adversarial Review](https://latere.ai/products/adversarial-review) capability puts an independent critic on an agent's output before you see it, vendor-neutral and auditable, so only the disputes that survive reach a human.
 
 ### Data
 
