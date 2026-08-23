@@ -41,9 +41,17 @@ Seven systems keep autonomous agents legible, bounded, and reviewable, with one 
 - **Autonomy is a spectrum.** Full AI autonomy and full manual control are both valid. Where to draw the line should always be a human decision.
 - **Build for the long term.** AI capabilities will keep evolving, paradigms will keep shifting. But the principle that human judgment belongs in the loop will not.
 
+## Security
+
+Found a vulnerability in a Latere service or repository? Read the
+[security policy](https://github.com/latere-ai/.github/blob/main/SECURITY.md)
+and report it through GitHub private vulnerability reporting or to
+[security@latere.ai](mailto:security@latere.ai). It covers scope, testing rules,
+response times, and safe harbour for good-faith research.
+
 ## Links
 
 - [latere.ai](https://latere.ai)
 - [Wallfacer](https://wf.latere.ai/) · [Topos](https://topos.latere.ai/) · [Lectio](https://lectio.latere.ai/) · [Drive](https://drive.latere.ai/) · [Cella](https://cella.latere.ai/) · [Lux](https://lux.latere.ai/) · [Identity](https://auth.latere.ai/)
 - [Blog](https://latere.ai/blog)
-- [Contact](mailto:contact@latere.ai)
+- [Contact](mailto:contact@latere.ai) · [Security](https://github.com/latere-ai/.github/blob/main/SECURITY.md)
