@@ -10,13 +10,15 @@ Autonomous agents can now act across tools, models, data, and environments. The 
 
 ## Products
 
-Three applications you and your agents work in, on a platform of five shared services. Every product stands on its own. Pick the one that fits your problem, or combine them.
+Two applications you and your agents work in, one research product, and the platform of five shared services all of them run on. Every product stands on its own. Pick the one that fits your problem, or combine them.
 
 ### Applications
 
 **[Wallfacer](https://wf.latere.ai/)** is an AI engineering teammate that turns ideas into working software. Talk through a plan, watch it build, and stay in control at every step: chat for exploration, specs for design, tasks for parallel execution, and code for precise edits. [Open source](https://github.com/changkun/wallfacer), runs on your own machine, bring any LLM provider.
 
 **[Lectio](https://lectio.latere.ai/)** turns any document into data. Submit almost any file, PDF, Word, spreadsheets, slides, images, or web pages, and get clean text or structured fields back, with every detail sourced to where it came from on the page. One request, predictable pricing, a full record.
+
+### AI & Science Research
 
 **[ReplicHAI](https://replichai.latere.ai/)** audits whether a research paper actually reproduces. Give it a paper: it finds what the authors released, implements and re-runs the part a machine can run, records every decision the paper left unwritten, and returns a verdict you can take apart. What reproduced, what did not, and what could not be judged, component by component, published with the full transcript beside it. A study that needs human participants is never simulated. Finished audits are public in the [registry](https://replichai.latere.ai/registry).
 
@@ -69,5 +71,6 @@ response times, and safe harbour for good-faith research.
 ## Links
 
 - [latere.ai](https://latere.ai) · [Products](https://latere.ai/products) · [Developer docs](https://platform.latere.ai/) · [Blog](https://latere.ai/blog)
-- [Wallfacer](https://wf.latere.ai/) · [Lectio](https://lectio.latere.ai/) · [ReplicHAI](https://replichai.latere.ai/) · [Identity](https://auth.latere.ai/) · [Topos](https://latere.ai/products/topos) · [Cella](https://latere.ai/products/cella) · [Lux](https://latere.ai/products/lux) · [Drive](https://drive.latere.ai/)
+- [Wallfacer](https://wf.latere.ai/) · [Lectio](https://lectio.latere.ai/) · [ReplicHAI](https://replichai.latere.ai/)
+- [Identity](https://auth.latere.ai/) · [Topos](https://latere.ai/products/topos) · [Cella](https://latere.ai/products/cella) · [Lux](https://latere.ai/products/lux) · [Drive](https://drive.latere.ai/)
 - [Contact](mailto:contact@latere.ai) · [Security](https://github.com/latere-ai/.github/blob/main/SECURITY.md)
