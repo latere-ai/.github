@@ -10,29 +10,44 @@ Autonomous agents can now act across tools, models, data, and environments. The 
 
 ## Products
 
-Seven systems keep autonomous agents legible, bounded, and reviewable, with one identity tying them together.
+Two applications you and your agents work in, on a platform of five shared services. Every product stands on its own. Pick the one that fits your problem, or combine them.
 
-### Workspace
+### Applications
 
-**[Wallfacer](https://wf.latere.ai/)** is an autonomous engineering platform. It works across multiple levels of abstraction: chat for exploration, specs for design, tasks for parallel execution, and code for precise edits. Full autonomy when it earns trust, full control on demand. [Open source](https://github.com/changkun/wallfacer), runs locally, bring any LLM provider.
+**[Wallfacer](https://wf.latere.ai/)** is an AI engineering teammate that turns ideas into working software. Talk through a plan, watch it build, and stay in control at every step: chat for exploration, specs for design, tasks for parallel execution, and code for precise edits. [Open source](https://github.com/changkun/wallfacer), runs on your own machine, bring any LLM provider.
 
-### Agents
+**[Lectio](https://lectio.latere.ai/)** turns any document into data. Submit almost any file, PDF, Word, spreadsheets, slides, images, or web pages, and get clean text or structured fields back, with every detail sourced to where it came from on the page. One request, predictable pricing, a full record.
 
-**[Topos](https://topos.latere.ai/)** runs managed agent workspaces. Run Codex, Claude Code, or custom agents in governed cloud sessions with safe model access, tools, and resumable state. Its [Adversarial Review](https://latere.ai/products/adversarial-review) capability puts an independent critic on an agent's output before you see it, vendor-neutral and auditable, so only the disputes that survive reach a human.
+### Platform
 
-### Data
+**[Identity](https://auth.latere.ai/)** is single sign-on for everything Latere. One account across every product, for people and agents alike, with access you grant or revoke from one place.
 
-**[Lectio](https://lectio.latere.ai/)** turns any document into data. Drop in almost any file, PDF, Word, spreadsheets, slides, images, or web pages, and it reads every page, resolves the layout, and returns readable text or structured data, with every detail sourced back to where it came from on the page.
+**[Topos](https://latere.ai/products/topos)** is managed runtime and orchestration for AI agents. Run Codex, Claude Code, or your own agents in the cloud with scoped access and enforced guardrails, full visibility into every action, and durable state to resume from. Its [Adversarial Review](https://latere.ai/products/adversarial-review) capability puts an independent critic on an agent's output before you see it, so only the disputes that survive reach a human.
 
-**[Drive](https://drive.latere.ai/)** is the user data plane. It persists user-owned state across products: personal files, org shared drives, Cella-mountable workspaces, agent-produced code repos, and file-shaped agent memory. Both a Drive-style web app and the storage API that Cella, Topos, and Wallfacer mount.
+**[Cella](https://latere.ai/products/cella)** provisions on-demand cloud sandboxes. One API call spins up an isolated environment for an agent or a quick experiment in seconds. Keep it as long as you need, tear it down when you are done.
 
-### Infrastructure
+**[Lux](https://latere.ai/products/lux)** is a single gateway to every major model provider. Reach OpenAI, Anthropic, Gemini, OpenRouter, and Ollama through one account, with per-key spend limits, secrets kept server-side, and an audit log of every request.
 
-**[Cella](https://cella.latere.ai/)** is a sandbox runtime for agents, developers, and MCP background jobs. One API call spins up a named sandbox, ephemeral or persistent. Fast enough to throw away, durable enough to keep.
+**[Drive](https://drive.latere.ai/)** is object storage for your files and everything agents produce. Your files stay yours and agents see only what you grant. Agent output is saved apart from your own work, versioned and reviewable. Share by link, with your team, or with no one.
 
-**[Lux](https://lux.latere.ai/)** is a model gateway. One URL routes to OpenAI, Anthropic, Gemini, OpenRouter, and Ollama with sealed credentials, virtual keys, spend caps, hooks, and audit.
+Developer documentation for the platform lives at [platform.latere.ai](https://platform.latere.ai/).
 
-**[Identity](https://auth.latere.ai/)** is single sign-on for Latere. One identity authenticates people and agents across every product, with scoped tokens, central revocation, and a full audit trail.
+## Open source
+
+Build on the same pieces we build on.
+
+| Project | What it is |
+| --- | --- |
+| [latere-cli](https://github.com/latere-ai/latere-cli) | One binary for Cella sandboxes, Lux model access, and adversarial code review. |
+| [lux-python-sdk](https://github.com/latere-ai/lux-python-sdk) · [lux-typescript-sdk](https://github.com/latere-ai/lux-typescript-sdk) | Talk to every model Lux routes through one request, response, and stream shape. |
+| [Topos Runtime](https://github.com/latere-ai/topos) | Embeddable Go runtime for multi-agent systems: sandboxed tools, sub-agents under attenuated permissions, deterministic traces. |
+| [agent-skills](https://github.com/latere-ai/agent-skills) | Reusable workflows for coding agents. The same spec and release process in Claude Code or Codex. |
+| [tgo](https://github.com/latere-ai/tgo) | Run open-weight LLMs from Go. No cgo, no Python, no vendor runtime. |
+| [llmops](https://github.com/latere-ai/llmops) | Serve open-weight models on GPUs you control, from frozen weights to a health-checked OpenAI- and Anthropic-compatible endpoint. |
+| [pay](https://github.com/latere-ai/pay) | Sell credit, hold a balance, and spend it, in Go: a processor-neutral payment port and a credit ledger. |
+| [service-template](https://github.com/latere-ai/service-template) | Production template for a Go backend with a Bun + React frontend, tag-driven releases, and deploy evidence. |
+
+**[AI as an Infrastructure](https://aaai.latere.ai/en/)** is our open book on inference, training, and evaluation, from engineering practice to theoretical foundations. Also in [中文](https://aaai.latere.ai/zh/).
 
 ## What we believe
 
@@ -51,7 +66,6 @@ response times, and safe harbour for good-faith research.
 
 ## Links
 
-- [latere.ai](https://latere.ai)
-- [Wallfacer](https://wf.latere.ai/) · [Topos](https://topos.latere.ai/) · [Lectio](https://lectio.latere.ai/) · [Drive](https://drive.latere.ai/) · [Cella](https://cella.latere.ai/) · [Lux](https://lux.latere.ai/) · [Identity](https://auth.latere.ai/)
-- [Blog](https://latere.ai/blog)
+- [latere.ai](https://latere.ai) · [Products](https://latere.ai/products) · [Developer docs](https://platform.latere.ai/) · [Blog](https://latere.ai/blog)
+- [Wallfacer](https://wf.latere.ai/) · [Lectio](https://lectio.latere.ai/) · [Identity](https://auth.latere.ai/) · [Topos](https://latere.ai/products/topos) · [Cella](https://latere.ai/products/cella) · [Lux](https://latere.ai/products/lux) · [Drive](https://drive.latere.ai/)
 - [Contact](mailto:contact@latere.ai) · [Security](https://github.com/latere-ai/.github/blob/main/SECURITY.md)
