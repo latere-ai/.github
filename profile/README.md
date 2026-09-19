@@ -43,7 +43,6 @@ Build on the same pieces we build on.
 | Project | What it is |
 | --- | --- |
 | [latere-cli](https://github.com/latere-ai/latere-cli) | One binary for Cella sandboxes, Lux model access, and adversarial code review. |
-| [lux-python-sdk](https://github.com/latere-ai/lux-python-sdk) · [lux-typescript-sdk](https://github.com/latere-ai/lux-typescript-sdk) | Talk to every model Lux routes through one request, response, and stream shape. |
 | [Topos Runtime](https://github.com/latere-ai/topos) | Embeddable Go runtime for multi-agent systems: sandboxed tools, sub-agents under attenuated permissions, deterministic traces. |
 | [agent-skills](https://github.com/latere-ai/agent-skills) | Reusable workflows for coding agents. The same spec and release process in Claude Code or Codex. |
 | [tgo](https://github.com/latere-ai/tgo) | Run open-weight LLMs from Go. No cgo, no Python, no vendor runtime. |
