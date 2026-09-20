@@ -26,6 +26,14 @@ One identity across five capabilities, each built on an open-source component.
 
 Developer documentation for the platform lives at [platform.latere.ai](https://platform.latere.ai/).
 
+## Inference
+
+Open-source components for running models on compute you control.
+
+**[llmops](https://github.com/latere-ai/llmops)** is the deployment and serving layer for open-weight models, from a single GPU host to a Kubernetes fleet. Freeze and verify model weights, start an inference engine, and expose OpenAI- and Anthropic-compatible endpoints with health checks. These endpoints can sit behind Lux for model routing and access control.
+
+**[tgo](https://github.com/latere-ai/tgo)** is an inference framework for running open-weight LLMs in Go. No cgo, no Python, no vendor runtime.
+
 ## Research
 
 **[ReplicHAI](https://replichai.latere.ai/)** audits whether a research paper actually reproduces. Give it a paper: it finds what the authors released, implements and re-runs the work, records every decision the paper left unwritten, and returns a verdict you can take apart. What reproduced, what did not, and what could not be judged, component by component, published with the full transcript beside it. Finished audits are public in the [registry](https://replichai.latere.ai/registry).
@@ -44,8 +52,6 @@ Tools and libraries to build with the platform and beyond.
 | --- | --- |
 | [latere-cli](https://github.com/latere-ai/latere-cli) | One binary for Cella sandboxes, Lux model access, and adversarial code review. |
 | [agent-skills](https://github.com/latere-ai/agent-skills) | Reusable workflows for coding agents. The same spec and release process in Claude Code or Codex. |
-| [tgo](https://github.com/latere-ai/tgo) | Run open-weight LLMs from Go. No cgo, no Python, no vendor runtime. |
-| [llmops](https://github.com/latere-ai/llmops) | Serve open-weight models on GPUs you control, from frozen weights to a health-checked OpenAI- and Anthropic-compatible endpoint. |
 | [pay](https://github.com/latere-ai/pay) | Sell credit, hold a balance, and spend it, in Go: a processor-neutral payment port and a credit ledger. |
 | [service-template](https://github.com/latere-ai/service-template) | Production template for a Go backend with a Bun + React frontend, tag-driven releases, and deploy evidence. |
 
