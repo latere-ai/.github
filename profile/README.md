@@ -74,7 +74,4 @@ response times, and safe harbour for good-faith research.
 
 ## Links
 
-- [latere.ai](https://latere.ai) · [Products](https://latere.ai/products) · [Developer docs](https://platform.latere.ai/) · [Blog](https://latere.ai/blog)
-- [Wallfacer](https://wf.latere.ai/) · [Lectio](https://lectio.latere.ai/) · [ReplicHAI](https://replichai.latere.ai/)
-- [Identity](https://auth.latere.ai) · [Agents](https://platform.latere.ai/console/agents) · [Models](https://platform.latere.ai/console/models) · [Environments](https://platform.latere.ai/console/environments) · [Code](https://platform.latere.ai/console/code) · [Storage](https://platform.latere.ai/console/storage)
-- [Contact](mailto:contact@latere.ai) · [Security](https://github.com/latere-ai/.github/blob/main/SECURITY.md)
+[latere.ai](https://latere.ai) · [Docs](https://platform.latere.ai/) · [Blog](https://latere.ai/blog) · [Contact](mailto:contact@latere.ai)
