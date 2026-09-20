@@ -8,6 +8,8 @@ Latere builds applications and platform services for autonomous agents: software
 
 Autonomous agents can now act across tools, models, data, and environments. The question is no longer whether they can move, but where judgment remains. Every system we ship follows one principle: the human stays in the loop. Work is visible. Authority is bounded. Output is reviewable. AI executes, humans decide.
 
+![Human intelligence in the loop: humans set direction and boundaries, agents execute, and visible work returns for human review.](assets/human-intelligence-loop.png)
+
 ## Core Platform
 
 One identity across five capabilities, each built on an open-source component.
