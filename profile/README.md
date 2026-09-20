@@ -10,7 +10,7 @@ Autonomous agents can now act across tools, models, data, and environments. The 
 
 ## Products
 
-Two applications you and your agents work in, one research product, and the platform of five shared services all of them run on. Every product stands on its own. Pick the one that fits your problem, or combine them.
+Two applications you and your agents work in, one research product, and the platform of four shared services all of them run on. Every product stands on its own. Pick the one that fits your problem, or combine them.
 
 ### Applications
 
@@ -32,9 +32,7 @@ Two applications you and your agents work in, one research product, and the plat
 
 **[Lux](https://latere.ai/products/lux)** is a single gateway to every major model provider. Reach OpenAI, Anthropic, Gemini, OpenRouter, and Ollama through one account, with per-key spend limits, secrets kept server-side, and an audit log of every request.
 
-**[Drive](https://drive.latere.ai/)** is object storage for your files and everything agents produce. Your files stay yours and agents see only what you grant. Agent output is saved apart from your own work, versioned and reviewable. Share by link, with your team, or with no one.
-
-Developer documentation for the platform lives at [platform.latere.ai](https://platform.latere.ai/).
+Storage is built into the platform console, powered by [Arca](https://github.com/latere-ai/arca): versioned files, permissioned sharing, and durable workspaces for agents and sandboxes. Developer documentation for the platform lives at [platform.latere.ai](https://platform.latere.ai/).
 
 ## Open source
 
@@ -42,6 +40,8 @@ Build on the same pieces we build on.
 
 | Project | What it is |
 | --- | --- |
+| [Arca](https://github.com/latere-ai/arca) | Durable storage for people, agents, and sandboxes: versioned files, sharing, and workspaces over S3 compatible storage and Postgres. |
+| [Origo](https://github.com/latere-ai/origo) | Git hosting over HTTPS and SSH, with S3 compatible storage as the source of truth and repositories on disk as a cache. |
 | [latere-cli](https://github.com/latere-ai/latere-cli) | One binary for Cella sandboxes, Lux model access, and adversarial code review. |
 | [Topos Runtime](https://github.com/latere-ai/topos) | Embeddable Go runtime for multi-agent systems: sandboxed tools, sub-agents under attenuated permissions, deterministic traces. |
 | [agent-skills](https://github.com/latere-ai/agent-skills) | Reusable workflows for coding agents. The same spec and release process in Claude Code or Codex. |
@@ -71,5 +71,5 @@ response times, and safe harbour for good-faith research.
 
 - [latere.ai](https://latere.ai) · [Products](https://latere.ai/products) · [Developer docs](https://platform.latere.ai/) · [Blog](https://latere.ai/blog)
 - [Wallfacer](https://wf.latere.ai/) · [Lectio](https://lectio.latere.ai/) · [ReplicHAI](https://replichai.latere.ai/)
-- [Identity](https://auth.latere.ai/) · [Topos](https://latere.ai/products/topos) · [Cella](https://latere.ai/products/cella) · [Lux](https://latere.ai/products/lux) · [Drive](https://drive.latere.ai/)
+- [Identity](https://auth.latere.ai/) · [Topos](https://latere.ai/products/topos) · [Cella](https://latere.ai/products/cella) · [Lux](https://latere.ai/products/lux)
 - [Contact](mailto:contact@latere.ai) · [Security](https://github.com/latere-ai/.github/blob/main/SECURITY.md)
