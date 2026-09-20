@@ -2,7 +2,7 @@
 
 **Human intelligence in the loop.**
 
-Latere builds applications and platform services for autonomous agents: software engineering and document work, on top of identity, a model gateway, sandboxes, storage, and orchestration.
+Latere builds applications and platform services for autonomous agents: software engineering and document work, on top of identity, a model gateway, sandboxes, Git hosting, storage, and orchestration.
 
 *Latere* is Latin for "to be hidden." What is hidden is human intelligence. In increasingly autonomous systems, human judgment does not disappear. It recedes behind every layer of decision-making, invisible but indispensable. Latere exists to ensure that this hidden human intelligence remains present, remains effective, and is never engineered away.
 
@@ -10,7 +10,7 @@ Autonomous agents can now act across tools, models, data, and environments. The 
 
 ## Products
 
-Two applications you and your agents work in, one research product, and the platform of four shared services all of them run on. Every product stands on its own. Pick the one that fits your problem, or combine them.
+Two applications you and your agents work in, one research product, and a core platform of six open-source components. Pick the pieces that fit your problem, or combine them.
 
 ### Applications
 
@@ -22,28 +22,31 @@ Two applications you and your agents work in, one research product, and the plat
 
 **[ReplicHAI](https://replichai.latere.ai/)** audits whether a research paper actually reproduces. Give it a paper: it finds what the authors released, implements and re-runs the work, records every decision the paper left unwritten, and returns a verdict you can take apart. What reproduced, what did not, and what could not be judged, component by component, published with the full transcript beside it. Finished audits are public in the [registry](https://replichai.latere.ai/registry).
 
-### Platform
+### Core Platform
 
-**[Identity](https://auth.latere.ai/)** is single sign-on for everything Latere. One account across every product, for people and agents alike, with access you grant or revoke from one place.
+All six components are open source. Build on the same foundations we use for Latere.
 
-**[Topos](https://latere.ai/products/topos)** is managed runtime and orchestration for AI agents. Run Codex, Claude Code, or your own agents in the cloud with scoped access and enforced guardrails, full visibility into every action, and durable state to resume from. Its [Adversarial Review](https://latere.ai/products/adversarial-review) capability puts an independent critic on an agent's output before you see it, so only the disputes that survive reach a human.
+**[Identity](https://github.com/latere-ai/auth)** provides single sign-on through OpenID Connect, with federated login, organizations, teams, and token issuance. It powers one account across every Latere product, for people and agents alike.
 
-**[Cella](https://latere.ai/products/cella)** provisions on-demand cloud sandboxes. One API call spins up an isolated environment for an agent or a quick experiment in seconds. Keep it as long as you need, tear it down when you are done.
+**[Lux](https://github.com/latere-ai/lux)** puts one gateway in front of your model providers. Issue and revoke access without handing out provider keys, set spend limits, and track usage through one API.
 
-**[Lux](https://latere.ai/products/lux)** is a single gateway to every major model provider. Reach OpenAI, Anthropic, Gemini, OpenRouter, and Ollama through one account, with per-key spend limits, secrets kept server-side, and an audit log of every request.
+**[Cella](https://github.com/latere-ai/cella)** is a control plane for sandboxes. Describe the environment an agent or workload needs, manage its lifecycle, run commands, attach a terminal, and move files in and out.
 
-Storage is built into the platform console, powered by [Arca](https://github.com/latere-ai/arca): versioned files, permissioned sharing, and durable workspaces for agents and sandboxes. Developer documentation for the platform lives at [platform.latere.ai](https://platform.latere.ai/).
+**[Origo](https://github.com/latere-ai/origo)** is Git hosting over HTTPS and SSH, with S3 compatible storage as the source of truth and repositories on disk as a cache. Give each project, sandbox, or agent run its own Git remote.
 
-## Open source
+**[Arca](https://github.com/latere-ai/arca)** is durable storage for people, agents, and sandboxes: versioned files, permissioned sharing, and workspaces over S3 compatible storage and Postgres. It powers storage in the Latere platform console.
 
-Build on the same pieces we build on.
+**[Topos](https://github.com/latere-ai/topos)** is an embeddable Go runtime for multi-agent systems, with sandboxed tools, sub-agents under scoped permissions, and deterministic traces. It powers Latere's [managed agent platform](https://latere.ai/products/topos), including [Adversarial Review](https://latere.ai/products/adversarial-review).
+
+Developer documentation for the platform lives at [platform.latere.ai](https://platform.latere.ai/).
+
+## More open source
+
+Tools and libraries to build with the platform and beyond.
 
 | Project | What it is |
 | --- | --- |
-| [Arca](https://github.com/latere-ai/arca) | Durable storage for people, agents, and sandboxes: versioned files, sharing, and workspaces over S3 compatible storage and Postgres. |
-| [Origo](https://github.com/latere-ai/origo) | Git hosting over HTTPS and SSH, with S3 compatible storage as the source of truth and repositories on disk as a cache. |
 | [latere-cli](https://github.com/latere-ai/latere-cli) | One binary for Cella sandboxes, Lux model access, and adversarial code review. |
-| [Topos Runtime](https://github.com/latere-ai/topos) | Embeddable Go runtime for multi-agent systems: sandboxed tools, sub-agents under attenuated permissions, deterministic traces. |
 | [agent-skills](https://github.com/latere-ai/agent-skills) | Reusable workflows for coding agents. The same spec and release process in Claude Code or Codex. |
 | [tgo](https://github.com/latere-ai/tgo) | Run open-weight LLMs from Go. No cgo, no Python, no vendor runtime. |
 | [llmops](https://github.com/latere-ai/llmops) | Serve open-weight models on GPUs you control, from frozen weights to a health-checked OpenAI- and Anthropic-compatible endpoint. |
@@ -71,5 +74,5 @@ response times, and safe harbour for good-faith research.
 
 - [latere.ai](https://latere.ai) · [Products](https://latere.ai/products) · [Developer docs](https://platform.latere.ai/) · [Blog](https://latere.ai/blog)
 - [Wallfacer](https://wf.latere.ai/) · [Lectio](https://lectio.latere.ai/) · [ReplicHAI](https://replichai.latere.ai/)
-- [Identity](https://auth.latere.ai/) · [Topos](https://latere.ai/products/topos) · [Cella](https://latere.ai/products/cella) · [Lux](https://latere.ai/products/lux)
+- [Identity](https://github.com/latere-ai/auth) · [Lux](https://github.com/latere-ai/lux) · [Cella](https://github.com/latere-ai/cella) · [Origo](https://github.com/latere-ai/origo) · [Arca](https://github.com/latere-ai/arca) · [Topos](https://github.com/latere-ai/topos)
 - [Contact](mailto:contact@latere.ai) · [Security](https://github.com/latere-ai/.github/blob/main/SECURITY.md)
