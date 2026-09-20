@@ -6,9 +6,9 @@ Latere builds applications and platform services for autonomous agents: software
 
 *Latere* is Latin for "to be hidden." What is hidden is human intelligence. In increasingly autonomous systems, human judgment does not disappear. It recedes behind every layer of decision-making, invisible but indispensable. Latere exists to ensure that this hidden human intelligence remains present, remains effective, and is never engineered away.
 
-Autonomous agents can now act across tools, models, data, and environments. The question is no longer whether they can move, but where judgment remains. Every system we ship follows one principle: the human stays in the loop. Work is visible. Authority is bounded. Output is reviewable. AI executes, humans decide.
+We build toward agents that listen, understand context, and take initiative across tools, models, data, and environments. They carry work forward autonomously in the background, within agreed boundaries, and proactively stay aligned with people: sharing progress, explaining decisions, and seeking human judgment when it matters. Every system we ship follows one principle: human intelligence stays in the loop. Agents take initiative. Humans stay informed and in control.
 
-![Human intelligence in the loop: humans set direction and boundaries, agents execute, and visible work returns for human review.](assets/human-intelligence-loop.png)
+![Agents continuously listen, act autonomously, and stay aligned in the background, connected to humans through intent, context, feedback, and transparent progress updates.](assets/human-intelligence-loop.png)
 
 ## Core Platform
 
