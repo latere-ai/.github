@@ -14,15 +14,15 @@ One identity across five capabilities, each built on an open-source component.
 
 **[Identity](https://auth.latere.ai)** provides single sign-on through OpenID Connect, with federated login, organizations, teams, and token issuance. It powers one account across every Latere product, for people and agents alike.
 
-**[Topos (Agents)](https://platform.latere.ai/agents)** runs and orchestrates AI agents with scoped access, visibility into every action, and durable state to resume from. Its [open-source runtime](https://github.com/latere-ai/topos) lets you build multi-agent systems in your own Go application.
+**[Agents](https://platform.latere.ai/agents)** runs and orchestrates AI agents with scoped access, visibility into every action, and durable state to resume from. To build multi-agent systems in your own Go application, check the open source core: [Topos](https://github.com/latere-ai/topos).
 
-**[Lux (Models)](https://platform.latere.ai/models)** puts one gateway in front of your model providers. Issue and revoke access without handing out provider keys, set spend limits, and track usage through one API. [Open source](https://github.com/latere-ai/lux).
+**[Models](https://platform.latere.ai/models)** puts one gateway in front of your model providers. Issue and revoke access without handing out provider keys, set spend limits, and track usage through one API. Check the open source core: [Lux](https://github.com/latere-ai/lux).
 
-**[Cella (Environments)](https://platform.latere.ai/environments)** manages environments for agents and workloads. Run commands, attach a terminal, move files in and out, and tear down an environment when you are done. [Open source](https://github.com/latere-ai/cella).
+**[Environments](https://platform.latere.ai/environments)** manages environments for agents and workloads. Run commands, attach a terminal, move files in and out, and tear down an environment when you are done. Check the open source core: [Cella](https://github.com/latere-ai/cella).
 
-**[Origo (Code)](https://platform.latere.ai/code)** hosts Git repositories over HTTPS and SSH. Give each project, sandbox, or agent run its own Git remote, with S3 compatible storage as the source of truth. [Open source](https://github.com/latere-ai/origo).
+**[Code](https://platform.latere.ai/code)** hosts Git repositories over HTTPS and SSH. Give each project, sandbox, or agent run its own Git remote, with S3 compatible storage as the source of truth. Check the open source core: [Origo](https://github.com/latere-ai/origo).
 
-**[Arca (Storage)](https://platform.latere.ai/storage)** keeps files and workspaces durable for people, agents, and sandboxes, with version history and permissioned sharing over S3 compatible storage and Postgres. [Open source](https://github.com/latere-ai/arca).
+**[Storage](https://platform.latere.ai/storage)** keeps files and workspaces durable for people, agents, and sandboxes, with version history and permissioned sharing over S3 compatible storage and Postgres. Check the open source core: [Arca](https://github.com/latere-ai/arca).
 
 Developer documentation for the platform lives at [platform.latere.ai](https://platform.latere.ai/).
 
@@ -70,5 +70,5 @@ response times, and safe harbour for good-faith research.
 
 - [latere.ai](https://latere.ai) · [Products](https://latere.ai/products) · [Developer docs](https://platform.latere.ai/) · [Blog](https://latere.ai/blog)
 - [Wallfacer](https://wf.latere.ai/) · [Lectio](https://lectio.latere.ai/) · [ReplicHAI](https://replichai.latere.ai/)
-- [Identity](https://auth.latere.ai) · [Topos (Agents)](https://platform.latere.ai/agents) · [Lux (Models)](https://platform.latere.ai/models) · [Cella (Environments)](https://platform.latere.ai/environments) · [Origo (Code)](https://platform.latere.ai/code) · [Arca (Storage)](https://platform.latere.ai/storage)
+- [Identity](https://auth.latere.ai) · [Agents](https://platform.latere.ai/agents) · [Models](https://platform.latere.ai/models) · [Environments](https://platform.latere.ai/environments) · [Code](https://platform.latere.ai/code) · [Storage](https://platform.latere.ai/storage)
 - [Contact](mailto:contact@latere.ai) · [Security](https://github.com/latere-ai/.github/blob/main/SECURITY.md)
