@@ -28,11 +28,11 @@ Developer documentation for the platform lives at [platform.latere.ai](https://p
 
 ## Inference
 
-Open-source components for running models on compute you control.
+Two capabilities for running models on compute you control, each built on an open-source core.
 
-**[Fornax](https://github.com/latere-ai/fornax)** is the deployment and serving layer for open-weight models, from a single GPU host to a Kubernetes fleet. Freeze and verify model weights, start an inference engine, and expose OpenAI- and Anthropic-compatible endpoints with health checks. These endpoints can sit behind Lux for model routing and access control.
+**Model Serving** deploys and operates open-weight models, from a single GPU host to a Kubernetes fleet. Freeze and verify model weights, start an inference engine, and expose OpenAI- and Anthropic-compatible endpoints with health checks. These endpoints can sit behind Lux for model routing and access control. Check the open source core: [Fornax](https://github.com/latere-ai/fornax).
 
-**[Forma](https://github.com/latere-ai/forma)** is an inference framework for running open-weight LLMs in Go. No cgo, no Python, no vendor runtime.
+**Model Execution** runs open-weight LLMs directly from Go. No cgo, no Python, no vendor runtime. Check the open source core: [Forma](https://github.com/latere-ai/forma).
 
 ## Research
 
