@@ -32,7 +32,7 @@ Two capabilities for running models on compute you control, each built on an ope
 
 **Model Serving** deploys and operates open-weight models, from a single GPU host to a Kubernetes fleet. Freeze and verify model weights, start an inference engine, and expose OpenAI- and Anthropic-compatible endpoints with health checks. These endpoints can sit behind Lux for model routing and access control. Check the open source core: [Fornax](https://github.com/latere-ai/fornax).
 
-**Model Execution** runs open-weight LLMs directly from Go. No cgo, no Python, no vendor runtime. Check the open source core: [Forma](https://github.com/latere-ai/forma).
+**Model Execution** runs open-weight LLMs in pure Go, with no Python or vendor runtime. Check the open source core: [Forma](https://github.com/latere-ai/forma).
 
 ## Research
 
