@@ -50,7 +50,7 @@ Tools and libraries to build with the platform and beyond.
 
 | Project | What it is |
 | --- | --- |
-| [latere-cli](https://github.com/latere-ai/latere-cli) | One binary for Cella sandboxes, Lux model access, and adversarial code review. |
+| [latere-cli](https://github.com/latere-ai/latere-cli) | One binary for the platform: sandboxes, model access, files, agent sessions, and adversarial code review. |
 | [agent-skills](https://github.com/latere-ai/agent-skills) | Reusable workflows for coding agents. The same spec and release process in Claude Code or Codex. |
 | [pay](https://github.com/latere-ai/pay) | Sell credit, hold a balance, and spend it, in Go: a processor-neutral payment port and a credit ledger. |
 | [service-template](https://github.com/latere-ai/service-template) | Production template for a Go backend with a Bun + React frontend, tag-driven releases, and deploy evidence. |
