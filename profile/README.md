@@ -56,7 +56,7 @@ Tools and libraries to build with the platform and beyond.
 | [service-template](https://github.com/latere-ai/service-template) | Production template for a Go backend with a Bun + React frontend, tag-driven releases, and deploy evidence. |
 | [sandbox-images](https://github.com/latere-ai/sandbox-images) | Container images that run coding agents and computer-use sessions, under Cella or standalone with Docker or Podman. |
 
-**[AI as an Infrastructure](https://aaai.latere.ai/en/)** is our open book on inference, training, and evaluation, from engineering practice to theoretical foundations. Also in [中文](https://aaai.latere.ai/zh/).
+**[AI as an Infrastructure](https://aaai.latere.ai/en/)** is our open book on AI as an infrastructure, from systems to agents: history, design decisions, and foundations, written for software engineers new to machine learning. Also in [中文](https://aaai.latere.ai/zh/).
 
 ## What We Believe
 
