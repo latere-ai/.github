@@ -20,7 +20,7 @@ One identity across five capabilities, each built on an open-source component.
 
 **[Environments](https://platform.latere.ai/console/environments)** manages environments for agents and workloads. Run commands, attach a terminal, move files in and out, and tear down an environment when you are done. Check the open source core: [Cella](https://github.com/latere-ai/cella).
 
-**[Code](https://platform.latere.ai/console/code)** hosts Git repositories over HTTPS and SSH. Give each project, sandbox, or agent run its own Git remote, with S3 compatible storage as the source of truth. Check the open source core: [Origo](https://github.com/latere-ai/origo).
+**[Code](https://platform.latere.ai/console/code)** hosts Git repositories over HTTPS and SSH. Give each project, sandbox, or agent run its own Git remote, with S3 compatible storage as the source of truth. Check the open source core: [Origo](https://github.com/latere-ai/origo), and [origo-web](https://github.com/latere-ai/origo-web) for browsing its repositories.
 
 **[Storage](https://platform.latere.ai/console/storage)** keeps files and workspaces durable for people, agents, and sandboxes, with version history and permissioned sharing over S3 compatible storage and Postgres. Check the open source core: [Arca](https://github.com/latere-ai/arca).
 
@@ -54,6 +54,7 @@ Tools and libraries to build with the platform and beyond.
 | [agent-skills](https://github.com/latere-ai/agent-skills) | Reusable workflows for coding agents. The same spec and release process in Claude Code or Codex. |
 | [pay](https://github.com/latere-ai/pay) | Sell credit, hold a balance, and spend it, in Go: a processor-neutral payment port and a credit ledger. |
 | [service-template](https://github.com/latere-ai/service-template) | Production template for a Go backend with a Bun + React frontend, tag-driven releases, and deploy evidence. |
+| [sandbox-images](https://github.com/latere-ai/sandbox-images) | Container images that run coding agents and computer-use sessions, under Cella or standalone with Docker or Podman. |
 
 **[AI as an Infrastructure](https://aaai.latere.ai/en/)** is our open book on inference, training, and evaluation, from engineering practice to theoretical foundations. Also in [中文](https://aaai.latere.ai/zh/).
 
