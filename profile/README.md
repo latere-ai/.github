@@ -70,7 +70,7 @@ Found a vulnerability in a Latere service or repository? Read the
 [security policy](https://github.com/latere-ai/.github/blob/main/SECURITY.md)
 and report it through GitHub private vulnerability reporting or to
 [security@latere.ai](mailto:security@latere.ai). It covers scope, testing rules,
-response times, and safe harbour for good-faith research.
+response times, and safe harbor for good-faith research.
 
 ## Links
 

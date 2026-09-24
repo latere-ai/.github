@@ -81,7 +81,7 @@ us what you reached.
 Do not run automated scanning that degrades the service for others. Rate-limit
 yourself.
 
-## Safe harbour
+## Safe harbor
 
 We will not pursue or support legal action against research that follows this
 policy: testing in good faith, within the scope and the rules above, reported
@@ -89,7 +89,7 @@ promptly, and not disclosed publicly before a fix ships. If a third party brings
 action against you for research that followed this policy, we will say that it
 was authorized.
 
-This is not a paid bounty programme. We do not currently pay for reports.
+This is not a paid bounty program. We do not currently pay for reports.
 
 ## Supported versions
 
