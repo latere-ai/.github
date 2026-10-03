@@ -2,7 +2,7 @@
 
 ![Agents continuously listen, act autonomously, and stay aligned in the background, connected to humans through intent, context, feedback, and transparent progress updates.](assets/human-intelligence-loop.png)
 
-Latere builds applications and platform services for autonomous agents: software engineering and document work, on top of identity, a model gateway, sandboxes, Git hosting, storage, and orchestration.
+Latere builds applications and platform services for autonomous agents, on top of identity, a model gateway, sandboxes, Git hosting, storage, and orchestration.
 
 *Latere* is Latin for "to be hidden." What is hidden is human intelligence. In increasingly autonomous systems, human judgment does not disappear. It recedes behind every layer of decision-making, invisible but indispensable. Latere exists to ensure that this hidden human intelligence remains present, remains effective, and is never engineered away.
 
