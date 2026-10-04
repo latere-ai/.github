@@ -1,8 +1,6 @@
-# Latere
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/latere-ai/.github/main/profile/assets/teaser-dark.png">
-  <img src="https://raw.githubusercontent.com/latere-ai/.github/main/profile/assets/teaser-light.png" alt="Latere: Trustworthy Superintelligence. Latere builds autonomous agents you can hand real work to, from a published website to a checked paper. They act within your rules and record every step." width="100%">
+  <img src="https://raw.githubusercontent.com/latere-ai/.github/main/profile/assets/teaser-light.png" alt="Latere: Trustworthy Superintelligence. Hand real work to autonomous agents and get the finished thing back, from a published website to a checked paper. They act within your rules and record every step." width="100%">
 </picture>
 
 Put Latere's agents to work through our applications, build your own on the Latere Platform, or run the open source cores behind it on your own infrastructure.
