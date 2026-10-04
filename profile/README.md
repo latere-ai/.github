@@ -5,11 +5,11 @@
   <img src="https://raw.githubusercontent.com/latere-ai/.github/main/profile/assets/teaser-light.png" alt="Latere: Trustworthy Superintelligence. Latere builds autonomous agents you can hand real work to, from a published website to a checked paper. They act within your rules and record every step." width="100%">
 </picture>
 
-Latere builds trustworthy superintelligence: proactive, autonomous agents that take initiative and carry real work forward in the background. They ship as applications, and as a platform built on open source cores you can run yourself.
+Put Latere's agents to work through our applications, build your own on the Latere Platform, or run the open source cores behind it on your own infrastructure.
 
 *Latere* is Latin for "to be hidden." What is hidden is human intelligence. In increasingly autonomous systems, human judgment does not disappear. It recedes behind every layer of decision-making, invisible but indispensable. Latere exists to ensure that this hidden human intelligence remains present, remains effective, and is never engineered away, so that superintelligence stays trustworthy and people stay in control.
 
-AI can now do real work: run a workflow from start to finish, turn an idea into a working product, build and ship software. As it grows more capable than the people it works for, the question that matters is whether it can be trusted. Every system we ship follows one principle: the human stays in the loop. Agents act within the rules people set, record every step, and seek human judgment when it matters.
+AI can now do real work: run a workflow from start to finish, turn an idea into a working product, build and ship software. As it grows more capable than the people it works for, the question that matters is whether it can be trusted. Our mission is trustworthy superintelligence. Every system we ship follows one principle: the human stays in the loop. Agents act within the rules people set, record every step, and seek human judgment when it matters.
 
 ## Core Platform
 
@@ -17,7 +17,7 @@ One sign-in, one console, and one API address across every capability. Each capa
 
 **[Identity](https://auth.latere.ai)** is the sign-in and access every capability below shares: single sign-on through OpenID Connect, with federated login, organizations, teams, and token issuance. One account covers every Latere product, for people and agents alike.
 
-**[Agents](https://platform.latere.ai/console/agents)** runs hosted agents: versioned agent definitions and the sessions people have with them, each in a sandbox of its own with every step in its log. A session survives the process that runs it and waits for a person where it should. Check the open source core: [Topos](https://github.com/latere-ai/topos).
+**[Agents](https://platform.latere.ai/console/agents)** runs hosted agents. Define an agent as a versioned configuration, start sessions with it, and follow every step in its log. Each session works in a sandbox of its own, survives the process that runs it, and waits for a person where it should. Check the open source core: [Topos](https://github.com/latere-ai/topos).
 
 **[Models](https://platform.latere.ai/console/models)** puts one gateway in front of your model providers. Issue and revoke access without handing out provider keys, set spend limits, and track usage through one API. Check the open source core: [Lux](https://github.com/latere-ai/lux).
 
@@ -27,7 +27,7 @@ One sign-in, one console, and one API address across every capability. Each capa
 
 **[Storage](https://platform.latere.ai/console/storage)** keeps files and workspaces durable for people, agents, and sandboxes, with version history and permissioned sharing over S3 compatible storage and Postgres. Check the open source core: [Arca](https://github.com/latere-ai/arca).
 
-**[Apps](https://platform.latere.ai/console/apps)** hosts web applications from a repository. Every push builds a preview, a version tag releases it, and each app answers at its own address. The contract its clients share is public in [apps](https://github.com/latere-ai/apps).
+**[Apps](https://platform.latere.ai/console/apps)** hosts web applications from a repository. Push to build a preview, tag a version to release it, and reach each app at its own address. The contract its clients share is public in [apps](https://github.com/latere-ai/apps).
 
 **[Parsing](https://platform.latere.ai/docs/parsing)** turns a file into pages, blocks, tables, and the fields of a schema you supply, each tied to its place on the page. Check the open source core: [Lectio](https://github.com/latere-ai/lectio).
 
