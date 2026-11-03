@@ -9,27 +9,41 @@ Put Latere's agents to work through our applications, build your own on the Late
 
 AI can now do real work: run a workflow from start to finish, turn an idea into a working product, build and ship software. As it grows more capable than the people it works for, the question that matters is whether it can be trusted. Our mission is trustworthy superintelligence. Every system we ship follows one principle: the human stays in the loop. Agents act within the rules people set, record every step, and seek human judgment when it matters.
 
+## Applications
+
+**[Latere Chat](https://chat.latere.ai/)** takes a piece of work in your own words. An agent does it on a computer of its own, shows you each step, and asks before it reaches anything outside. It can come back to a conversation on its own, to check whether something you were waiting for has arrived, and keep work running on a schedule.
+
+**[Latere Studio](https://studio.latere.ai/)** is Latere's app for the Mac. A shortcut opens an ask over any app, and what needs you arrives as a notification you can answer in place. When you choose, a conversation works in folders on your own Mac, with every command it runs kept on record.
+
+Both are views of the same conversations on the Latere Platform, and neither holds agent logic of its own.
+
 ## Core Platform
 
 One sign-in, one console, and one API address across every capability. Each capability except Apps is built on an open source core you can run yourself.
 
 **[Identity](https://auth.latere.ai)** is the sign-in and access every capability below shares: single sign-on through OpenID Connect, with federated login, organizations, teams, and token issuance. One account covers every Latere product, for people and agents alike.
 
-**[Agents](https://platform.latere.ai/console/agents)** runs hosted agents. Define an agent as a versioned configuration, start sessions with it, and follow every step in its log. Each session works in a sandbox of its own, survives the process that runs it, and waits for a person where it should. Check the open source core: [Topos](https://github.com/latere-ai/topos).
+**[Agents](https://platform.latere.ai/console/agents)** runs hosted agents. Define an agent as a versioned configuration, start sessions with it yourself or from a trigger on a schedule or a push, and follow every step in its log. Each session works in a sandbox of its own or on your own computer, survives the process that runs it, and waits for a person where it should. Check the open source core: [Topos](https://github.com/latere-ai/topos).
+
+**[Oversight](https://platform.latere.ai/console/oversight)** learns, from a person's own Allow and Deny answers, which of an agent's actions can run on their own, which should wait for the person, and which should not run. It also measures how often each source of those decisions is wrong: your rules, a model that reviews actions, and Oversight itself. Check the open source core: [Limen](https://github.com/latere-ai/limen).
 
 **[Models](https://platform.latere.ai/console/models)** puts one gateway in front of your model providers. Issue and revoke access without handing out provider keys, set spend limits, and track usage through one API. Check the open source core: [Lux](https://github.com/latere-ai/lux).
 
-**[Environments](https://platform.latere.ai/console/environments)** runs isolated workloads for agents and applications. Run commands, attach a terminal, and move files in and out, with credentials swapped in at egress so they never enter the workload. Check the open source core: [Cella](https://github.com/latere-ai/cella).
+**[Environments](https://platform.latere.ai/console/environments)** is where agents and applications run code: a sandbox the platform runs, your team's machines, or your own computer, each behind its own boundary. Run commands, attach a terminal, and move files in and out, with credentials swapped in at egress so they never enter the workload. Check the open source core: [Cella](https://github.com/latere-ai/cella).
+
+**[Connections](https://platform.latere.ai/console/connections)** lets agents work in the services you already use. Connect a service once, such as a calendar, your mail, or an MCP server, and agents use it without ever holding your credential: each call goes through Connections, which checks it and adds the credential on the way out. Check the open source core: [Pons](https://github.com/latere-ai/pons).
 
 **[Repos](https://platform.latere.ai/console/repos)** hosts Git repositories over HTTPS and SSH. Give each project, sandbox, or agent run its own Git remote, with S3 compatible storage as the source of truth. Check the open source core: [Origo](https://github.com/latere-ai/origo), and [origo-web](https://github.com/latere-ai/origo-web) for browsing its repositories.
 
 **[Storage](https://platform.latere.ai/console/storage)** keeps files and workspaces durable for people, agents, and sandboxes, with version history and permissioned sharing over S3 compatible storage and Postgres. Check the open source core: [Arca](https://github.com/latere-ai/arca).
 
-**[Apps](https://platform.latere.ai/console/apps)** hosts web applications from a repository. Push to build a preview, tag a version to release it, and reach each app at its own address. The contract its clients share is public in [apps](https://github.com/latere-ai/apps).
+**[Apps](https://platform.latere.ai/console/apps)** hosts web applications from a repository. Push to build a preview, tag a version to release it, and reach each app at its own address on latere.site. A new app is private until you open it to others, and apps their owners list appear in the [gallery](https://latere.site/). The contract its clients share is public in [apps](https://github.com/latere-ai/apps).
 
-**[Parsing](https://platform.latere.ai/docs/parsing)** turns a file into pages, blocks, tables, and the fields of a schema you supply, each tied to its place on the page. Check the open source core: [Lectio](https://github.com/latere-ai/lectio).
+**[Parsing](https://platform.latere.ai/console/parsing)** turns a file into pages, blocks, tables, and the fields of a schema you supply, each tied to its place on the page. Check the open source core: [Lectio](https://github.com/latere-ai/lectio).
 
-Developer documentation for the platform lives at [platform.latere.ai](https://platform.latere.ai/).
+**[Evals](https://platform.latere.ai/console/evals)** compares agents, and programs built on models, on the same tasks. Each setup tries every task several times, every attempt is graded, and Evals reports which did better, by how much, how sure that is, and what else differed between them. Check the open source core: [Examen](https://github.com/latere-ai/examen).
+
+Developer documentation for the platform lives at [platform.latere.ai](https://platform.latere.ai/), and the [Go SDK](https://github.com/latere-ai/sdk-go) reaches every capability from code.
 
 ## Inference
 
@@ -41,7 +55,7 @@ Two capabilities for running models on compute you control, each built on an ope
 
 ## Research
 
-**[ReplicHAI](https://replichai.latere.ai/)** audits whether a research paper actually reproduces. Give it a paper: it finds what the authors released, implements and re-runs the work, records every decision the paper left unwritten, and returns a verdict you can take apart. What reproduced, what did not, and what could not be judged, component by component, published with the full transcript beside it. Finished audits are public in the [registry](https://replichai.latere.ai/registry).
+**[ReplicHAI](https://replichai.latere.ai/)** audits whether a research paper actually reproduces. Give it a paper: it finds what the authors released, implements and re-runs the work, records every decision the paper left unwritten, and returns a verdict you can take apart. What reproduced, what did not, and what could not be judged, component by component, published with the full transcript beside it. Finished audits are public in the [registry](https://replichai.latere.ai/registry), and its source is open in [replichai](https://github.com/latere-ai/replichai).
 
 ## More Open Source
 
@@ -49,11 +63,13 @@ Tools and libraries to build with the platform and beyond.
 
 | Project | What it is |
 | --- | --- |
-| [latere-cli](https://github.com/latere-ai/latere-cli) | One binary for the platform: environments, apps deployed with a git push, model access, agent sessions, repositories, and adversarial code review. |
+| [latere-cli](https://github.com/latere-ai/latere-cli) | One binary and one sign-in for the platform: environments, apps from a git push, models, agents, repositories, oversight, and evals. |
+| [sdk-go](https://github.com/latere-ai/sdk-go) | The Go SDK for the Latere API: agent sessions, connections, storage, apps, oversight, evals, and your account, on the standard library alone. |
+| [managed-agents](https://github.com/latere-ai/managed-agents) | One provider-neutral contract for running a sandboxed, tool-using model session, with the conformance suite every adapter must pass. |
 | [agon](https://github.com/latere-ai/agon) | Adversarial review of an agent's change: independent critics cross-examine a diff, and a contention score decides the outcome. |
 | [agent-skills](https://github.com/latere-ai/agent-skills) | Reusable workflows for coding agents. The same spec and release process in Claude Code or Codex. |
 | [sandbox-images](https://github.com/latere-ai/sandbox-images) | Container images that run coding agents and computer-use sessions, under Cella or standalone with Docker or Podman. |
-| [latere-ui](https://github.com/latere-ai/latere-ui) | Glass materials, interface components, and application chrome for Vue and React, in light and dark. |
+| [latere-ui](https://github.com/latere-ai/latere-ui) | Glass materials, interface components, and application chrome for React, in light and dark. |
 | [pkg](https://github.com/latere-ai/pkg) | Shared Go packages behind Latere services: auth, telemetry, LLM dialect translation, storage clients, and utilities. |
 | [pay](https://github.com/latere-ai/pay) | Sell credit, hold a balance, and spend it, in Go: a processor-neutral payment port and a credit ledger. |
 | [service-template](https://github.com/latere-ai/service-template) | Template for production Go services, with an optional React frontend, tag-driven releases, and drift checks. |

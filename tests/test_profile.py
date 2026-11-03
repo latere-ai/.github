@@ -13,6 +13,17 @@ ASSETS = ROOT / "profile" / "assets"
 TEASER = ASSETS / "teaser" / "teaser.html"
 # The profile is shown outside this repository, so its images are absolute.
 RAW = "https://raw.githubusercontent.com/latere-ai/.github/main/"
+# The platform's capabilities as the profile lists them. Each has a section
+# of its own in the console, which its name links.
+CAPABILITIES = (
+    "Agents", "Oversight", "Models", "Environments", "Connections",
+    "Repos", "Storage", "Apps", "Parsing", "Evals",
+)
+
+
+def section(heading):
+    """The text under a level-two heading of the profile, up to the next one."""
+    return PROFILE.read_text().split(f"## {heading}\n", 1)[1].split("\n## ", 1)[0]
 
 
 def left_columns(path, columns):
@@ -60,18 +71,33 @@ def left_columns(path, columns):
 
 class ProfileLinksTest(unittest.TestCase):
     def test_capabilities_link_to_console_in_descriptions(self):
-        profile = PROFILE.read_text()
-        core = profile.split("## Core Platform\n", 1)[1].split("\n## ", 1)[0]
-        links = re.findall(r"\[([^]]+)\]\(([^)]+)\)", core)
-        for capability in ("Agents", "Models", "Environments", "Repos", "Storage", "Apps"):
+        links = re.findall(r"\[([^]]+)\]\(([^)]+)\)", section("Core Platform"))
+        for capability in CAPABILITIES:
             with self.subTest(capability=capability):
                 self.assertEqual(
                     [url for label, url in links if label == capability],
                     [f"https://platform.latere.ai/console/{capability.lower()}"],
                 )
         self.assertIn(("Identity", "https://auth.latere.ai"), links)
-        # Parsing has no console section, so it links its docs.
-        self.assertIn(("Parsing", "https://platform.latere.ai/docs/parsing"), links)
+
+    def test_every_capability_but_apps_names_its_open_core(self):
+        # The section says each capability except Apps is built on an open
+        # source core, so each one's paragraph links that core's repository.
+        paragraphs = dict(re.findall(r"^\*\*\[([^]]+)\]\([^)]+\)\*\*(.*)$", section("Core Platform"), re.M))
+        self.assertEqual(set(paragraphs), {"Identity", *CAPABILITIES})
+        for capability in CAPABILITIES:
+            if capability == "Apps":
+                continue
+            with self.subTest(capability=capability):
+                self.assertRegex(
+                    paragraphs[capability],
+                    r"Check the open source core: \[\w+\]\(https://github\.com/latere-ai/[a-z-]+\)",
+                )
+
+    def test_applications_link_their_sites(self):
+        links = re.findall(r"\[([^]]+)\]\(([^)]+)\)", section("Applications"))
+        self.assertIn(("Latere Chat", "https://chat.latere.ai/"), links)
+        self.assertIn(("Latere Studio", "https://studio.latere.ai/"), links)
 
 
 class ProfileTeaserTest(unittest.TestCase):
