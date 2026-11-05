@@ -221,7 +221,7 @@ class StandardTest(unittest.TestCase):
         self.assertEqual(check.slug("What is protected?"), "what-is-protected")
 
 
-def settings_runner(repo=None, pvr=True, packages=(), public=("example", ".github")):
+def settings_runner(repo=None, pvr=True, packages=(), public=("example", ".github"), single=None):
     base = {
         "visibility": "public", "description": "A server that does one thing.",
         "topics": ["go", "server", "mls", "e2ee", "oidc"], "homepage": "",
@@ -240,7 +240,12 @@ def settings_runner(repo=None, pvr=True, packages=(), public=("example", ".githu
         if path.endswith("/private-vulnerability-reporting"):
             return json.dumps({"enabled": pvr})
         if path.startswith("orgs/latere-ai/packages?package_type=container"):
-            return json.dumps(list(packages))
+            return json.dumps(list(packages) if path.endswith("&page=1") else [])
+        if path.startswith("orgs/latere-ai/packages/container/"):
+            name = path.rsplit("/", 1)[1]
+            if single and name in single:
+                return json.dumps(single[name])
+            raise RuntimeError("gh: Package not found. (HTTP 404)")
         if path.startswith("orgs/latere-ai/packages"):
             return "[]"
         raise RuntimeError(f"unexpected {args}")
@@ -273,6 +278,23 @@ class SettingsTest(unittest.TestCase):
                      "projects are on", "secret scanning is off", "push protection is off",
                      "private vulnerability reporting is off", "exampled is private"):
             self.assertIn(want, joined)
+
+    def test_a_named_package_the_list_leaves_out_is_read_on_its_own(self):
+        runner = settings_runner(single={"exampled": {"name": "exampled", "visibility": "private"},
+                                         "examplectl": {"name": "examplectl", "visibility": "public"}})
+        found = check.Check(self.repo.root, "example", "service", runner=runner,
+                            packages=["exampled", "examplectl", "gone"]).run()
+        got = [f.message for f in found if f.rule == "settings"]
+        self.assertIn("the container package exampled is private; its settings page is "
+                      "https://github.com/orgs/latere-ai/packages/container/exampled/settings", got)
+        self.assertFalse(any("examplectl" in m for m in got), got)
+        self.assertTrue(any("cannot read orgs/latere-ai/packages/container/gone" in m for m in got), got)
+
+    def test_a_package_in_the_list_is_not_read_twice(self):
+        listed = [{"name": "exampled", "visibility": "private", "repository": {"name": "example"}}]
+        found = check.Check(self.repo.root, "example", "service", runner=settings_runner(packages=listed),
+                            packages=["exampled"]).run()
+        self.assertEqual(sum("exampled is private" in f.message for f in found), 1)
 
     def test_a_link_to_a_private_repository_is_a_finding(self):
         self.repo.write("docs/api.md", "# API\n\n[x](https://github.com/latere-ai/secret)\n")

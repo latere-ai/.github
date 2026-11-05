@@ -1,5 +1,5 @@
 {
-  "description": "Every public repository of latere-ai and its kind, as standard/README.md defines them. `uses` names a GitHub feature the repository uses that is off by default. `exempt` says why the standard does not apply.",
+  "description": "Every public repository of latere-ai and its kind, as standard/README.md defines them. `uses` names a GitHub feature the repository uses that is off by default. `packages` names the container images it publishes, since GitHub's list of the organization's packages can leave one out. `exempt` says why the standard does not apply.",
   "repositories": {
     ".github": {"kind": "organization"},
     "agent-skills": {"kind": "tool"},
@@ -29,10 +29,9 @@
     "replichai": {"kind": "service"},
     "sandbox-images": {"kind": "tool"},
     "sdk-go": {"kind": "library"},
-    "sermo": {"kind": "service"},
+    "sermo": {"kind": "service", "packages": ["sermod"]},
     "service-template": {"kind": "tool"},
     "status": {"kind": "service"},
-    "topos": {"kind": "service"},
-    "typesafe-ai-go-sdk": {"exempt": "archived; its README points to the package that replaced it"}
+    "topos": {"kind": "service"}
   }
 }

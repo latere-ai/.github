@@ -259,8 +259,11 @@ checkout's directory name unless `--name` gives another, and its kind
 comes from `repositories.json` unless `--kind` gives one. With
 `--github`, it also reads the repository's settings, its published
 packages and the list of public repositories through the `gh` command,
-which must be signed in. It prints one line per finding, as
-`path:line: rule: what is wrong`, and exits 1 when there is any.
+which must be signed in. GitHub's list of the organization's packages can
+leave one out, so a repository's entry in `repositories.json` names the
+container images it publishes under `packages`, and each is read on its
+own. It prints one line per finding, as `path:line: rule: what is wrong`,
+and exits 1 when there is any.
 
 What it checks, by rule:
 

@@ -198,11 +198,12 @@ def walk(root: Path, suffixes: tuple[str, ...]) -> Iterable[Path]:
 
 class Check:
     def __init__(self, root: Path, name: str, kind: str, uses: Iterable[str] = (),
-                 runner: Runner | None = None):
+                 runner: Runner | None = None, packages: Iterable[str] = ()):
         self.root = root
         self.name = name
         self.kind = kind
         self.uses = set(uses)
+        self.packages = list(packages)
         self.runner = runner
         self.found: list[Finding] = []
 
@@ -517,16 +518,38 @@ class Check:
         pvr = self.api(f"repos/{ORG}/{self.name}/private-vulnerability-reporting")
         if isinstance(pvr, dict) and not pvr.get("enabled"):
             self.add(where, 0, "settings", "private vulnerability reporting is off")
+        seen: set[str] = set()
         for ptype in ("container", "npm", "maven", "rubygems", "nuget"):
-            packages = self.api(f"orgs/{ORG}/packages?package_type={ptype}&per_page=100")
-            if not isinstance(packages, list):
+            for p in self.org_packages(ptype):
+                if (p.get("repository") or {}).get("name") == self.name:
+                    seen.add(f"{ptype}/{p.get('name')}")
+                    self.package_visibility(ptype, p)
+        # GitHub's list of the organization's packages can leave one out, so
+        # the images repositories.json names are each read on their own.
+        for name in self.packages:
+            if f"container/{name}" in seen:
                 continue
-            for p in packages:
-                if (p.get("repository") or {}).get("name") == self.name and p.get("visibility") != "public":
-                    self.add(where, 0, "settings",
-                             f"the {ptype} package {p.get('name')} is {p.get('visibility')}; "
-                             f"its settings page is https://github.com/orgs/{ORG}/packages/{ptype}/"
-                             f"{p.get('name')}/settings")
+            p = self.api(f"orgs/{ORG}/packages/container/{name}")
+            if isinstance(p, dict):
+                self.package_visibility("container", p)
+
+    def org_packages(self, ptype: str) -> list[dict]:
+        out: list[dict] = []
+        for page in range(1, 51):
+            batch = self.api(f"orgs/{ORG}/packages?package_type={ptype}&per_page=100&page={page}")
+            if not isinstance(batch, list):
+                break
+            out += batch
+            if len(batch) < 100:
+                break
+        return out
+
+    def package_visibility(self, ptype: str, p: dict) -> None:
+        if p.get("visibility") != "public":
+            self.add("(github)", 0, "settings",
+                     f"the {ptype} package {p.get('name')} is {p.get('visibility')}; "
+                     f"its settings page is https://github.com/orgs/{ORG}/packages/{ptype}/"
+                     f"{p.get('name')}/settings")
 
 
 def fetch_status(url: str) -> int | None:
@@ -587,7 +610,8 @@ def main(argv: list[str] | None = None, runner: Runner = gh) -> int:
     if kind is None:
         print(f"check.py: {name} is not in {REGISTRY.name}; add it, or pass --kind", file=sys.stderr)
         return 2
-    found += Check(root, name, kind, entry.get("uses", ()), runner if args.github else None).run()
+    found += Check(root, name, kind, entry.get("uses", ()), runner if args.github else None,
+                   entry.get("packages", ())).run()
     for f in found:
         print(f)
     return 1 if found else 0
