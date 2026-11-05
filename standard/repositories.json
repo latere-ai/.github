@@ -6,7 +6,7 @@
     "agon": {"kind": "library"},
     "ai-as-an-infrastructure": {"kind": "content"},
     "apps": {"kind": "library"},
-    "arca": {"kind": "service"},
+    "arca": {"kind": "service", "packages": ["arcad", "arca-stubs"]},
     "cella": {"kind": "service"},
     "ci": {"kind": "tool"},
     "ci-gate": {"kind": "tool"},
