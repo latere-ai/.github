@@ -68,10 +68,11 @@ example.
 1. **The title and one paragraph** before any heading: what the project
    is and does, in words a newcomer knows, with the first sentence in
    bold. Badges, if any, go after the paragraph, never before it.
-2. **`## Status`**: how far along it is, said plainly. The latest
-   release, whether its API may still change, what works today and what
-   is designed and not yet built, as a table where there is more than a
-   sentence to say. A project that protects anyone's data says here
+2. **`## Status`**: how far along it is, said plainly. Where the
+   releases are, linked rather than named (a version written by hand is
+   wrong after the next release), whether the API may still change, what
+   works today and what is designed and not yet built, as a table where
+   there is more than a sentence to say. A project that protects anyone's data says here
    whether it has had an external security audit.
 3. **`## Quickstart`**: the shortest path from a fresh machine to seeing
    it work, with every command, each block runnable in order in one
