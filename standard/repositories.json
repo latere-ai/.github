@@ -17,7 +17,7 @@
     "latere-ui": {"kind": "library"},
     "lectio": {"kind": "service"},
     "limen": {"kind": "service"},
-    "lux": {"kind": "service"},
+    "lux": {"kind": "service", "packages": ["lux", "lux-stubs"]},
     "managed-agents": {"kind": "library"},
     "mc": {"exempt": "a maintained fork keeps its upstream's files and layout"},
     "minio": {"exempt": "a maintained fork keeps its upstream's files and layout"},
