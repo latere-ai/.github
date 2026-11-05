@@ -21,7 +21,7 @@
     "managed-agents": {"kind": "library"},
     "mc": {"exempt": "a maintained fork keeps its upstream's files and layout"},
     "minio": {"exempt": "a maintained fork keeps its upstream's files and layout"},
-    "origo": {"kind": "service"},
+    "origo": {"kind": "service", "packages": ["origod", "origo-stubs"]},
     "origo-web": {"kind": "service"},
     "pay": {"kind": "library"},
     "pkg": {"kind": "library"},
