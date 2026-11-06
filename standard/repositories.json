@@ -10,6 +10,7 @@
     "cella": {"kind": "service"},
     "ci": {"kind": "tool"},
     "ci-gate": {"kind": "tool"},
+    "engineering-reports": {"kind": "content"},
     "examen": {"kind": "service"},
     "forma": {"kind": "library"},
     "fornax": {"kind": "tool"},
