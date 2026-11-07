@@ -230,6 +230,7 @@ class Check:
             self.conduct()
             self.templates()
             self.changelog()
+            self.deploy()
         self.writing()
         if self.runner is not None:
             self.settings()
@@ -316,6 +317,29 @@ class Check:
         if p.read_bytes() != CONDUCT.read_bytes():
             self.add("CODE_OF_CONDUCT.md", 1, "conduct",
                      f"differs from {ORG}/.github/CODE_OF_CONDUCT.md; copy it as it is")
+
+    def deploy(self) -> None:
+        # A repository that keeps its maintainer's installation in
+        # deploy/prod/ says so beside it, so a reader of the public tree
+        # tells that folder from an install path.
+        folder = self.root / "deploy"
+        if not (folder / "prod").is_dir():
+            return
+        rel = "deploy/README.md"
+        text = self.read(rel)
+        if text is None:
+            self.add(rel, 1, "deploy", "missing: a repository with deploy/prod/ says what each folder of deploy/ holds")
+            return
+        for sub in sorted(p.name for p in folder.iterdir() if p.is_dir()):
+            if not re.search(rf"(?<![\w./-]){re.escape(sub)}/", text):
+                self.add(rel, 1, "deploy", f"names no `{sub}/`: say what each folder of deploy/ holds")
+        if "maintainer" not in text:
+            self.add(rel, 1, "deploy", "says `prod/` is the maintainer's own installation and not an install path")
+        variable = re.sub(r"[^A-Z0-9]", "_", self.name.upper()) + "_RELEASE_DEPLOY"
+        if variable not in text:
+            self.add(rel, 1, "deploy", f"names `{variable}`, the variable without which a release applies nothing")
+        if "install.md" not in text:
+            self.add(rel, 1, "deploy", "links docs/install.md for anyone installing the service")
 
     def templates(self) -> None:
         config = self.read(".github/ISSUE_TEMPLATE/config.yml")

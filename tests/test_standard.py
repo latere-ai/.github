@@ -191,6 +191,25 @@ class StandardTest(unittest.TestCase):
         self.repo.write("CHANGELOG.md", CHANGELOG.replace("### Fixed", "### Bugs"))
         self.assertIn("changelog", self.repo.rules())
 
+    def test_a_deploy_folder_with_prod_says_what_each_folder_is(self):
+        self.repo.write("deploy/prod/kustomization.yaml", "resources: []\n")
+        self.repo.write("deploy/prod-bootstrap/rbac.yaml", "kind: Role\n")
+        self.repo.write("deploy/bootstrap/secrets.example.yaml", "kind: Secret\n")
+        self.assertEqual(self.repo.rules(), ["deploy"])
+        page = ("# Deploy\n\n- `bootstrap/`: the Secrets.\n- `prod/`: the maintainer's own installation, applied only "
+                "where EXAMPLE_RELEASE_DEPLOY is set.\n- `prod-bootstrap/`: its identity.\n\n"
+                "To install it, read [Installing](../docs/install.md).\n")
+        self.repo.write("deploy/README.md", page)
+        self.assertEqual(self.repo.check(), [])
+        for missing in ("- `bootstrap/`: the Secrets.\n", "maintainer's own ", "EXAMPLE_RELEASE_DEPLOY", "../docs/install.md"):
+            with self.subTest(missing=missing):
+                self.repo.write("deploy/README.md", page.replace(missing, ""))
+                self.assertEqual(self.repo.rules(), ["deploy"])
+
+    def test_a_deploy_folder_without_prod_needs_no_page(self):
+        self.repo.write("deploy/examples/kind/kustomization.yaml", "resources: []\n")
+        self.assertEqual(self.repo.check(), [])
+
     def test_writing_rules(self):
         self.repo.write("docs/api.md", "# API\n\nIt waits — then answers.\n")
         self.assertEqual(self.repo.rules(), ["dashes"])
@@ -317,7 +336,7 @@ class RegistryTest(unittest.TestCase):
     def test_the_standard_lists_every_rule_the_script_checks(self):
         text = (ROOT / "standard" / "README.md").read_text(encoding="utf-8")
         for rule in ("files", "readme", "docs", "security", "contributing", "conduct", "templates",
-                     "changelog", "spelling", "dashes", "diagrams", "links", "settings", "listed"):
+                     "changelog", "deploy", "spelling", "dashes", "diagrams", "links", "settings", "listed"):
             self.assertIn(f"| `{rule}` |", text)
 
     def test_the_standard_meets_its_own_writing_rules(self):

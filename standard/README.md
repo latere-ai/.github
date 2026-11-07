@@ -50,6 +50,7 @@ the standard does not apply.
 | `.github/ISSUE_TEMPLATE/`: `bug_report.yml`, `feature_request.yml`, `config.yml` | yes | yes | yes | yes |
 | `.github/PULL_REQUEST_TEMPLATE.md` | yes | yes | yes | yes |
 | `docs/` with the [service set](#a-services-docs) | yes | | | |
+| `deploy/README.md` in the form of [The deploy folder](#the-deploy-folder), when the repository has `deploy/prod/` | yes | yes | yes | yes |
 
 Each repository carries its own copy of every community file, the code
 of conduct included. GitHub falls back to this organization's files only
@@ -118,6 +119,23 @@ and setting in `docs/` or in its README.
 Every number a reader acts on, such as a default, a limit or a timeout,
 is stated on one page and linked from the others, so a change to it is
 one edit.
+
+## The deploy folder
+
+A repository that keeps its maintainer's own installation in
+`deploy/prod/` carries `deploy/README.md`, so a reader of the public
+tree tells that folder from an install path. The page:
+
+- lists each folder under `deploy/` and what it holds;
+- says `prod/` is the maintainer's own installation and not an install
+  path, applied by the `deploy` job of the release workflow only where
+  the repository variable `<REPO>_RELEASE_DEPLOY` is set, so a fork
+  deploys nothing;
+- links `docs/install.md` for anyone installing the service.
+
+Every fact on it comes from the repository's own files. It says what the
+release archive holds only where the release workflow is read to build
+it that way.
 
 ## Security
 
@@ -277,6 +295,7 @@ What it checks, by rule:
 | `contributing` | the two sections |
 | `conduct` | the code of conduct is identical to this repository's |
 | `templates` | the issue forms, `blank_issues_enabled: false`, a link to the security policy |
+| `deploy` | with `deploy/prod/`, a `deploy/README.md` that names each folder, the maintainer's installation, the release variable and `docs/install.md` |
 | `changelog` | the heading, `## Unreleased`, the release headings, their order, and the groups |
 | `spelling` | British spellings from a list |
 | `dashes` | no em dash |
