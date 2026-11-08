@@ -191,6 +191,13 @@ class StandardTest(unittest.TestCase):
         self.repo.write("CHANGELOG.md", CHANGELOG.replace("### Fixed", "### Bugs"))
         self.assertIn("changelog", self.repo.rules())
 
+    def test_a_prerelease_comes_after_its_release(self):
+        rc = "## v0.2.0-rc1 - 2026-11-02\n\n### Added\n\n- **The candidate.**\n\n"
+        self.repo.write("CHANGELOG.md", CHANGELOG.replace("## v0.1.0 - 2026-11-01", rc + "## v0.1.0 - 2026-11-01"))
+        self.assertEqual(self.repo.check(), [])
+        self.repo.write("CHANGELOG.md", CHANGELOG.replace("## v0.2.0 - 2026-11-03", rc + "## v0.2.0 - 2026-11-03"))
+        self.assertIn("changelog", self.repo.rules())
+
     def test_a_deploy_folder_with_prod_says_what_each_folder_is(self):
         self.repo.write("deploy/prod/kustomization.yaml", "resources: []\n")
         self.repo.write("deploy/prod-bootstrap/rbac.yaml", "kind: Role\n")

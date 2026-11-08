@@ -90,7 +90,18 @@ LINK = re.compile(r"(!?)\[(?:[^\[\]]|\[[^\]]*\])*\]\(\s*<?([^)\s>]+)>?(?:\s+\"[^
 REF_DEF = re.compile(r"^\s{0,3}\[[^\]]+\]:\s*<?(\S+?)>?(?:\s|$)")
 HTML_ANCHOR = re.compile(r"<a\s+(?:id|name)=\"([^\"]+)\"", re.IGNORECASE)
 ORG_LINK = re.compile(rf"https://github\.com/{ORG}/([A-Za-z0-9._-]+)(?:/blob/main/([^#?\s)]+))?")
-RELEASE = re.compile(r"^v(\d+)\.(\d+)\.(\d+)(?:-[0-9A-Za-z.]+)? - (\d{4})-(\d{2})-(\d{2})$")
+RELEASE = re.compile(r"^v(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z.]+))? - (\d{4})-(\d{2})-(\d{2})$")
+
+
+def release_order(m: re.Match) -> tuple:
+    """release_order sorts a RELEASE match by SemVer precedence: a prerelease
+    comes before its release, and its identifiers compare numerically when
+    both are numbers, numbers before words."""
+    core = tuple(int(x) for x in m.group(1, 2, 3))
+    if m.group(4) is None:
+        return core + (1,)
+    parts = tuple((0, int(p), "") if p.isdigit() else (1, 0, p) for p in m.group(4).split("."))
+    return core + (0,) + parts
 
 
 @dataclass(frozen=True)
@@ -387,7 +398,7 @@ class Check:
             if not m:
                 self.add(rel, n, "changelog", f"`## {h}` is not `## vX.Y.Z - YYYY-MM-DD`")
                 continue
-            version = tuple(int(x) for x in m.group(1, 2, 3))
+            version = release_order(m)
             seen.add(h.split(" ", 1)[0])
             if last is not None and version >= last:
                 self.add(rel, n, "changelog", f"`## {h}` is out of order: the newest release comes first")
